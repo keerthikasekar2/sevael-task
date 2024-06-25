@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <style src="">
+        table, th, td {
+    border: 1px solid #e9e8e8 ;
+  border-collapse: collapse;
+  width: 240px;
+  font-size: 14px;
+
+  
+}
+th{
+    border-radius: 10px 10px 0px 0px ;
+    background-color: #469cb4;
+    color: white;
+    height: 35px;
+}
+td{
+    background-color: white;
+    font-size: 12px;
+    text-align: center;
+}
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+      #main {
+        /* height: 500px; */
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+
+      #sidebar {
+        width: 250px;
+        height: 1920px;
+        background-color: rgb(47, 47, 47);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        justify-items: center;
+        
+        
+      }
+      .logo {
+        width: 200px;
+        border-radius: 6px;
+        margin-top: 22px;
+       display: flex;
+       justify-content: center;
+       
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="sidebar">
+        
+        <div >
+          <img src="daimler-logo-new.jpg" alt="" class="logo"  />
+        </div>
+        <div style=" padding-left: 45px; display: flex; flex-direction: column; gap: 8px;">
+        <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+          <span class="material-symbols-outlined" style="color: #7d7d7d;"> home </span>
+          <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >Home</p>
+        </div>
+       
+          <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+            <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                monitoring
+                </span>
+            <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >Performance</p>
+          </div>
+          <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+            <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                cycle
+                </span>            
+                <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >process</p>
+          </div>
+          <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+            <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                verified
+                </span>            <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >Quality</p>
+          </div>
+          <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+            <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                groups
+                </span>            <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >People</p>
+          </div>
+          <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+            <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                sticky_note_2
+                </span>            <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >Project</p>
+          </div>
+          <div style=" width: 250px;display: flex; flex-direction: row; align-items: center; gap: 8px; justify-items: start;">
+            <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                sticky_note_2
+                </span>            <p style="color: #7d7d7d; font-size: 18px; padding-top: 2px ;" >KYS</p>
+          </div>
+        </div>
+      </div>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 50px; height: fit-content;">
+        <div style="height: 80px; box-shadow: 0px 1px 10px rgb(212, 212, 212); display: flex; flex-direction: row; align-items: center; padding-left: 15px; justify-content: space-between; ">
+            <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined" style="color:#469cb4; font: size 28px;">alarm</span>
+            <p style="color: #7d7d7d; font-size: 14px;">  current session timer 30:00 mins</p>
+            </div>
+            <div style=" display: flex; align-items: center; gap: 26px;"  >
+                <p style="color: #7d7d7d; font-size: 14px;">Perfomance > View Monthly Report</p>
+                <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                    check_box_outline_blank
+                    </span>
+                    <span class="material-symbols-outlined" style="color: #7d7d7d;">
+                        notifications
+                        </span>
+                    <div style="height: 80px; width: 140px; display: flex; align-items: center; background-color: #dbdbdb; gap: 10px; padding-left: 10px;">
+                        <img src="depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" style=" width: 60px; height: 60px; border-radius: 40px;">
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-items: center; gap: 2px;">
+                            <p style="color: #7d7d7d; font-size: 14px; margin: 0px;">Siva</p>
+                            <p style="color: #7d7d7d; font-size: 12px; margin: 0px;">Admin</p>
+
+                        </div>
+
+                    </div>
+
+            </div>
+        </div>
+        <div style=" height: 700px; display: flex; flex-direction: column; align-items: center;  gap: 30px; ">
+             <div style=" display: flex; flex-direction: row; gap: 22px; align-items: center; height: 90px; ">
+                <select name="" id="" style=" height: 35px; width: 120px; border-radius: 5px; border-color: #e9e8e8; border-width: 2px;">
+                    <option value="">2024</option>
+                    <option value="">2023</option>
+                    <option value="">2022</option>
+                </select>
+                <select name="" id="" style=" height: 35px; width: 120px; border-radius: 5px; border-color: #e9e8e8;border-width: 2px;">
+                    <option value="">yearly</option>
+                    <option value="">monthly</option>
+                    <option value="">daily</option>S
+                </select>
+                <input type="text" style=" height: 35px; width: 200px; border-radius: 5px; border-color: #e9e8e8; border-width: 2px;"> 
+                <input type="text" style=" height: 35px; width: 200px; border-radius: 5px; border-color: #e9e8e8; border-width: 2px;">
+                <input type="text" style=" height: 35px; width: 200px; border-radius: 5px; border-color: #e9e8e8; border-width: 2px;">
+                <button style=" height: 35px; width: 100px; border-radius: 5px; background-color: #469cb4; border: none; color: white;">Submit</button>
+                <span class="material-symbols-outlined" style=" transform: rotate(90deg); color: #469cb4; font-size:28px;">
+                    pending
+                    </span>
+
+             </div>
+             <div style="width: 100%; display: flex; flex-direction: row; justify-items: center;">
+             <div style="width: 90%; height: 350px; border: 2px solid #e9e8e8; border-radius: 10px; margin-left: 55px; display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div style="display: flex; flex-direction: column; justify-items: center; padding: 20px; gap:5px;" >
+                        <p style="color: #000000; font-size: 18px; margin: 0px;">Overall Trend</p>
+                        <p style="color: #000000; font-size: 25px; margin: 0px;">2024</p>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items:center; gap: 10px; padding-right: 20px;">
+                        <span style="height: 10px;
+                        width: 10px;
+                        background-color: #469cb4;
+                        border-radius: 50%;"></span>
+                        <p style=" font-size: 16px;">Active User</p>
+                    
+                        <select name="" id="" style=" height: 30px; width: 100px; border-radius: 5px; border-color: #e9e8e8; border-width: 2px;">
+                            <option value="">Yearly</option>
+                            <option value="">Monthly</option>
+                            <option value="">Daily</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <canvas id="myChart" style="width:20%; height:50px; ;"></canvas>
+                </div>
+             </div>
+            </div>
+            <div style="width: 100%;">
+                <p style="padding-left: 60px; font-size: 14px;">Please click on the individual KPI values for the detailed information </p>
+
+            </div>
+            <div style="display: flex; flex-direction: row; width: 100%; justify-content: center; gap: 50px;">
+                <div style="width:44%; height: 900px;  background-color: #f4f2f2;   border-radius: 10px; display: flex; flex-direction: column; gap: 30px; ">
+                    <p style="padding-left: 20px; padding-top: 20px; font-size: 14px; font-weight: bold;">Section 1 [40/40]</p>
+                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px ;">
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px ;">
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px ;">
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <p style="padding-left: 20px;  font-size: 14px; font-weight: bold;">Section 1 Trend</p>
+                    <div style=" width: 80%;  background-color: white; margin-left:50px; border-radius: 15px; ">
+                    <canvas id="myChart2" style="width:50%; height: 50px; padding-top: 10px; background-color: white; border-radius: 15px; "></canvas>
+                </div>
+                </div>
+                <div style="width:44%; height: 900px;  background-color: #f4f2f2;   border-radius: 10px; display: flex; flex-direction: column; gap: 30px; ">
+                    <p style="padding-left: 20px; padding-top: 20px; font-size: 14px; font-weight: bold;">Section 2 [60/60]</p>
+                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px ;">
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px ;">
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px ;">
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table style="height: 150px; ">
+                                <tr>
+                                    <th colspan="2" style="text-align: start; padding-left: 8px;">Line Stoppage (Material)</th>
+                                </tr>
+                                <tr>
+                                    <td>SRR Value (mins)</th>
+                                    <td>Score</th>
+                                </tr>
+                                <tr>
+                                    <td>0</th>
+                                    <td>15/15</th>
+                                </tr>
+                                <tr  >
+                                    <td style="border-radius:0px 0px 0px 10px ;"  ;>0</th>
+                                    <td style="border-radius:0px 0px 10px 0px ;">0/0</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <p style="padding-left: 20px;  font-size: 14px; font-weight: bold;">Section 2 Trend</p>
+                    <div style=" width: 80%;  background-color: white; margin-left:50px; border-radius: 15px; ">
+                    <canvas id="myChart3" style="width:50%; height: 50px; padding-top: 10px; background-color: white; border-radius: 15px; "></canvas>
+                </div>
+                </div>           
+             </div>
+             <div style=" display: flex; flex-direction: row; gap: 130px; justify-items: center ;">
+                <div style=" margin-left: -50px;">
+                    <img src="WhatsApp Image 2024-06-25 at 18.37.34.jpeg" alt="" style=" width: 500px; height: 250px;">
+                </div>
+                <div style="display: flex; flex-direction: row;  margin-left: 20px; gap: 100px; ">
+                    <div style=" padding-left: 40px; ">
+                        <span class="material-symbols-outlined" style="color: rgb(124, 203, 4); transform: rotate(180deg); font-size: 50px;">
+                            battery_horiz_075
+                            </span>
+                            <p style="padding: 0px; margin: 0px;">0-0%</p>
+                            <span class="material-symbols-outlined" style="color: rgb(124, 203, 4); transform: rotate(180deg); font-size: 50px;">
+                                battery_horiz_075
+                                </span>
+                                <p style="padding: 0px; margin: 0px;">1-50%</p>
+                                <span class="material-symbols-outlined" style="color: rgb(36, 36, 36); transform: rotate(180deg); font-size: 50px;">
+                                    battery_horiz_075
+                                    </span>
+                                    <p style="padding: 0px; margin: 0px;">51-100%</p>
+                                    
+                    </div>
+                    <div>
+                        <img src="WhatsApp Image 2024-06-25 at 18.42.22.jpeg" alt="" style="width: 230px; height: 230px;">
+                    </div>
+                </div>
+             </div>
+             <div style=" width: 100%; text-align: start;">
+             <p style=" padding-left: 30px; color: #469cb4;">Copyright&#169; 2024, All Rights Reserved-Diamler</p>
+            </div>
+        </div>
+        
+
+      </div>
+    </div>
+</div>
+  </body>
+  <script>
+    var xValues = ["January", "February", "March", "April", "May","June","July","August","September","October","November","December"];
+    var yValues = [0,0,0,0,0,0,0,0,100,0,0,0];
+    var barColors = ["#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4","#469cb4"];
+    
+    new Chart("myChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: ""
+        }
+      }
+    });
+
+
+    const xValues1 = ["Sep","Oct","Nov"];
+
+new Chart("myChart2", {
+  type: "line",
+  data: {
+    labels: xValues1,
+    datasets: [{ 
+      data: [0,0,40],
+      borderColor: "#469cb4",
+      fill: false
+    }, ]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+const xValues2 = ["Sep","Oct","Nov"];
+
+new Chart("myChart3", {
+  type: "line",
+  data: {
+    labels: xValues2,
+    datasets: [{ 
+      data: [0,0,40],
+      borderColor: "#469cb4",
+      fill: false
+    }, ]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+    </script>
+    
+</html>
